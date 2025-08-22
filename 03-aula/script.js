@@ -88,52 +88,54 @@ console.log("A soma deu: ", valorSomado)*/
 
 var senha = "0";
 var saldo = 400;
-var vcSabe
-var novoSaldo
 
 while (senha != "4") {
-  var senha = prompt("DIgite sua senha: ");
+  senha = prompt("Digite sua senha: ");
 }
+
 usuario();
 
 function usuario() {
-  saldo = saldo
-  alert("Bem vindo, Lucas Assis. seu saldo é: " + saldo);
-  alert("Deseja Realizar um saque ou deposito.");
-  var decida = prompt("1- Saque, 2 - Deposito");
+  alert("Bem vindo, Lucas Assis. Seu saldo é: " + saldo);
+  var decida = prompt("Deseja realizar: 1 - Saque, 2 - Depósito");
 
-  if (Number(decida) == 2) {
-    deposito(saldo);
+  if (Number(decida) === 2) {
+    deposito();
+  } else if (Number(decida) === 1) {
+    saque();
   } else {
-    saque(saldo);
+    alert("Opção inválida.");
+    usuario(); // volta pro menu
   }
 }
-function deposito(valor) {
-  let colocar = prompt("Digite o valor que quer depositar: ");
-  let valorTotal = Number(colocar) + Number(valor);
-  alert("Seu novo saldo é: " + valorTotal);
-  novaTentativa();
-  return valor
-}
-novoSaldo = deposito(valor,colocar)
 
-function saque(valor) {
-  let tirar = prompt("Digite o valor que quer Sacar: ");
-  let valorTotal = Number(valor) - Number(tirar);
-  alert("Seu novo saldo é: " + valorTotal);
+function deposito() {
+  let colocar = prompt("Digite o valor que quer depositar: ");
+  saldo = saldo + Number(colocar);
+  alert("Depósito realizado! Seu novo saldo é: " + saldo);
   novaTentativa();
-  return valor
 }
-novoSaldo = saque(valor,colocar)
+
+function saque() {
+  let tirar = prompt("Digite o valor que quer sacar: ");
+  if (Number(tirar) > saldo) {
+    alert("Saldo insuficiente!");
+  } else {
+    saldo = saldo - Number(tirar);
+    alert("Saque realizado! Seu novo saldo é: " + saldo);
+  }
+  novaTentativa();
+}
 
 function novaTentativa() {
-  var vcSabe = prompt("Deseja realizar outra operação? 1 - Sim 2 - Não");
-  if (Number(vcSabe) == 1) {
-    usuario(saldo);
+  var opcao = prompt("Deseja realizar outra operação? 1 - Sim | 2 - Não");
+  if (Number(opcao) === 1) {
+    usuario();
   } else {
     fim();
   }
 }
+
 function fim() {
-  alert("Obrigado, por usar o banco C&G");
+  alert("Obrigado por usar o banco C&G!");
 }
