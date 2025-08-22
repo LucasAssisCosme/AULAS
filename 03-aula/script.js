@@ -1,23 +1,21 @@
-console.log("vamos que vamos")
+console.log("vamos que vamos");
 
 //Laços de repetição
 
 //PARA = FOR
-for(var i = 0; i < 5; i++){
-     console.log("Ainda estoy ahí")
-     console.log("estou aqui")
-
-
+for (var i = 0; i < 5; i++) {
+  console.log("Ainda estoy ahí");
+  console.log("estou aqui");
 }
 
 console.log("Acabou de repetir");
 
 //Enquanto = While
 
-var contagem = 0
-while( contagem < 10){
-    console.log("Estou repentido inifinitamente");
-    contagem++
+var contagem = 0;
+while (contagem < 10) {
+  console.log("Estou repentido inifinitamente");
+  contagem++;
 }
 
 //Exercicio 1
@@ -38,7 +36,7 @@ alert("Acabou, so olhar no console !!!")*/
  }
  console.log("Você entrou !!!")*/
 
- // Funções
+// Funções
 
 /* //Cria função
  function bemVindo(){
@@ -76,7 +74,7 @@ else{
 }
 }*/
 
-// funções com retorno 
+// funções com retorno
 
 /*function soma (valor1, valor2) {
     let resultado = valor1 + valor2
@@ -88,56 +86,54 @@ var valorSomado = soma(7, 6)
 
 console.log("A soma deu: ", valorSomado)*/
 
- var senha = "0"
- var saldo = 800
- var valorTotal 
- var tirar
- var colocar
+var senha = "0";
+var saldo = 400;
+var vcSabe
+var novoSaldo
 
+while (senha != "4") {
+  var senha = prompt("DIgite sua senha: ");
+}
+usuario();
 
- while( senha != "4"){
-     var senha = prompt("DIgite sua senha: ")
- }
- usuario()
+function usuario() {
+  saldo = saldo
+  alert("Bem vindo, Lucas Assis. seu saldo é: " + saldo);
+  alert("Deseja Realizar um saque ou deposito.");
+  var decida = prompt("1- Saque, 2 - Deposito");
 
-   function usuario(){
-     alert("Bem vindo, Lucas Assis.")
-     alert("Deseja Realizar um saque ou deposito.")
-     var decida = prompt("1- Saque, 2 - Deposito")
+  if (Number(decida) == 2) {
+    deposito(saldo);
+  } else {
+    saque(saldo);
+  }
+}
+function deposito(valor) {
+  let colocar = prompt("Digite o valor que quer depositar: ");
+  let valorTotal = Number(colocar) + Number(valor);
+  alert("Seu novo saldo é: " + valorTotal);
+  novaTentativa();
+  return valor
+}
+novoSaldo = deposito(valor,colocar)
 
-     if(Number(decida) == 2){
-          deposito(saldo)
-     }
-     else{
-       saque(saldo)
-     }
-    }
-    function deposito(saldo) {
-         colocar = prompt("Digite o valor que quer depositar: ")
-         valorTotal = Number(colocar) + Number(saldo)
-        alert("Seu novo saldo é: "+ valorTotal)
-        novaTentativa()
-    }
+function saque(valor) {
+  let tirar = prompt("Digite o valor que quer Sacar: ");
+  let valorTotal = Number(valor) - Number(tirar);
+  alert("Seu novo saldo é: " + valorTotal);
+  novaTentativa();
+  return valor
+}
+novoSaldo = saque(valor,colocar)
 
-       function saque(saldo) {
-         tirar = prompt("Digite o valor que quer Sacar: ")
-         valorTotal = Number(saldo) - Number(tirar)
-        alert("Seu novo saldo é: "+ valorTotal)
-        novaTentativa()
-    }
-
-    function novaTentativa (){
-         let vcSabe = prompt("Deseja realizar outra operação? 1 - Sim 2 - Não")
-         
-         if(Number(vcSabe) == 1){
-            usuario()
-         }
-         else{
-            fim()
-         }
-
-    }
-    function fim(){
-      alert("Obrigado, por usar o banco C&G")
-    }
-    
+function novaTentativa() {
+  var vcSabe = prompt("Deseja realizar outra operação? 1 - Sim 2 - Não");
+  if (Number(vcSabe) == 1) {
+    usuario(saldo);
+  } else {
+    fim();
+  }
+}
+function fim() {
+  alert("Obrigado, por usar o banco C&G");
+}
