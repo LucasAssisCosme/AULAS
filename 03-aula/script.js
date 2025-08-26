@@ -86,6 +86,7 @@ var valorSomado = soma(7, 6)
 
 console.log("A soma deu: ", valorSomado)*/
 
+//Banco
 var senha = "0";
 var saldo = 400;
 
