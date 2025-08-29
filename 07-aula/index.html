@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- This = Elementos que chamou a função -->
+    <button onclick="quemMeChamou(this)" class="btn" id="b1">Botão 1</button>
+    <button onclick="quemMeChamou(this)"class="btn" id="b2">Botão 2</button>
+    <button onclick="quemMeChamou(this)"class="btn" id="b3">Clique aqui</button>
+
+    <p onclick="quemMeChamou(this)" name="barabere" id="p"> Paragarfo </p>
+  
+    <input type="text" name="teste" oninput="quemMeChamou(this)">
+
+    <hr>
+    <hr>
+    Vai mudar quando digitar:
+    <input type="text" oninput="trocaTexto(this)">
+    <h1 id="textoParaTrocar">Texto padrão</h1>
+
+    <hr>
+
+    <input type="text" onchange="troca(this)">
+
+    <h1 id="textoOutro">OLHA DE NOVO</h1>
+
+    <hr>
+
+    <h1
+    onmouseover="corVermelha(this)"
+    onmouseout="corAzul(this)"
+    
+    >VAI TROCAR DE COR</h1>
+    <!-- <script src="script.js"></script> -->
+    <script src="interacao.js"></script>
+</body>
+</html>
